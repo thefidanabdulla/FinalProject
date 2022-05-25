@@ -14,11 +14,11 @@ namespace DataAccess.Concrete.InMemory
         public InMemoryProductDal()
         {
             _products = new List<Product> { 
-                new Product{CategoryId=1, ProductId = 1, ProductName = "Cup", UnitPrice=15, UnitInStock=15},
-                new Product{CategoryId=2, ProductId = 1, ProductName = "Camera", UnitPrice=500, UnitInStock=3},
-                new Product{CategoryId=3, ProductId = 2, ProductName = "Telephone", UnitPrice=1500, UnitInStock=2},
-                new Product{CategoryId=4, ProductId = 2, ProductName = "Keyboard", UnitPrice=150, UnitInStock=65},
-                new Product{CategoryId=5, ProductId = 2, ProductName = "Mouse", UnitPrice=85, UnitInStock=1},
+                new Product{CategoryId=1, ProductId = 1, ProductName = "Cup", UnitPrice=15, UnitsInStock=15},
+                new Product{CategoryId=2, ProductId = 1, ProductName = "Camera", UnitPrice=500, UnitsInStock=3},
+                new Product{CategoryId=3, ProductId = 2, ProductName = "Telephone", UnitPrice=1500, UnitsInStock=2},
+                new Product{CategoryId=4, ProductId = 2, ProductName = "Keyboard", UnitPrice=150, UnitsInStock=65},
+                new Product{CategoryId=5, ProductId = 2, ProductName = "Mouse", UnitPrice=85, UnitsInStock=1},
             };
         }
         public void Add(Product product)
@@ -43,7 +43,7 @@ namespace DataAccess.Concrete.InMemory
             productToUpdate.ProductName = product.ProductName;
             productToUpdate.CategoryId = product.CategoryId;
             productToUpdate.UnitPrice = product.UnitPrice;
-            productToUpdate.UnitInStock = product.UnitInStock;
+            productToUpdate.UnitsInStock = product.UnitsInStock;
         }
 
         public List<Product> GetAllByCategory(int categoryId)
