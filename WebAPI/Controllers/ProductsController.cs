@@ -1,4 +1,7 @@
-﻿using Entities.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,14 +15,19 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        IProductService _productService;
+
+        public ProductsController(IProductService productService)
+        {
+            _productService = productService;
+        }
+
         [HttpGet]
         public List<Product> Get()
         {
-            return new List<Product>
-            {
-                new Product{ProductId = 1, ProductName = "Apple"},
-                new Product{ProductId = 2, ProductName = "Banana"},
-            };
+            
+            var result = _productService.GetAll();
+            return result.Data;
         }
     }
 }
