@@ -22,6 +22,7 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+        [Validate]
         public IResult Add(Product product)
         {
             
