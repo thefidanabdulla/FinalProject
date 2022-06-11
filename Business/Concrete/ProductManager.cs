@@ -23,12 +23,15 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        [ValidationAspect(typeof (ProductValidator))]
+        //[ValidationAspect(typeof (ProductValidator))]
         public IResult Add(Product product)
         {
-            _productDal.Add(product);
+            
+                _productDal.Add(product);
 
-            return new SuccesResult(Messages.ProductAdded);
+                return new SuccesResult(Messages.ProductAdded);
+            
+           
         }
 
         public IDataResult<List<Product>> GetAll()
