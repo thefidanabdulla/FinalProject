@@ -44,6 +44,7 @@ namespace Business.Concrete
             return new SuccesResult(Messages.ProductAdded);
         }
 
+        //[CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour == 15)
