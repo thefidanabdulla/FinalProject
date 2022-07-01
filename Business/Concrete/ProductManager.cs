@@ -122,7 +122,7 @@ namespace Business.Concrete
         [TransactionScopeAspect]
         public IResult AddTransactionalTest(Product product)
         {
-            
+            return null;
         }
     }
 }
